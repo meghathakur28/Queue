@@ -1,0 +1,93 @@
+import java.util.*;
+class HelloWorld {
+    public static int f=0;
+    public static int r=0;
+    public static int size=0;
+    public static void add(int element,int[] arr)
+    {
+        if(r>arr.length)
+        {
+            System.out.println("Queue Overflow");
+        }
+        else
+        {
+            arr[r]=element;
+            r++;
+            size--;
+        }
+    }
+    public static int remove(int[] arr)
+    {
+        int p=-1;
+        if(f>r)
+        {
+            System.out.println("Queue Underflow");
+        }
+        else{
+        p=arr[f];
+        f++;
+        size--;
+        }
+        return p;
+    }
+    public static int peek(int[] arr)
+    {
+        int p=-1;
+        if(f>r)
+        {
+            System.out.println("there is no element in queue");
+            return -1;
+        }
+        else
+        p=arr[f];
+        return p;
+    }
+    public static void display(int[] arr)
+    {
+        if(r>arr.length)
+        {
+            System.out.println("Queue Overflow");
+        }
+        for(int i=f;i<r;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+    public static int size(int[] arr)
+    {
+        int sizes=0;
+        for(int i=f;i<r;i++)
+        {
+            sizes++;
+        }
+        return sizes;
+    }
+    public static boolean isempty()
+    {
+        if(size==0)
+        {
+            return true;
+        }
+        else
+        return false;
+    }
+    public static void main(String[] args) {
+        int[] arr=new int[10];
+        add(1,arr);
+        add(2,arr);
+        add(3,arr);
+        add(4,arr);
+        add(5,arr);
+        add(6,arr);
+        add(7,arr);
+        add(8,arr);
+        add(9,arr);
+        add(10,arr);
+        System.out.println("Poll the element: "+remove(arr));
+        System.out.println("peek eleemnt: "+peek(arr));
+        display(arr);
+        System.out.println("");
+        System.out.println("Size of the Queue: "+size(arr));
+        System.out.println(isempty());
+    }
+}
