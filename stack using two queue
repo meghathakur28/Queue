@@ -1,0 +1,39 @@
+//stack using two queue
+import java.util.*;
+class HelloWorld {
+    static class Stack{
+        static Queue<Integer> q1=new ArrayDeque<>();
+        static Queue<Integer> q2=new ArrayDeque<>();
+        public static void push(int data)
+        {
+            q1.add(data);
+        }
+        public static void pop()
+        {
+            while(q1.size()>1)
+            {
+                int a=q1.remove();
+                q2.add(a);
+            }
+            q1.remove();
+            while(q2.size()>0)
+            {
+                int a=q2.poll();
+                q1.add(a);
+            }
+        }
+        public static void display()
+        {
+            System.out.println(q1);
+        }
+    }
+    public static void main(String[] args) {
+        Stack st = new Stack();
+        st.push(2);
+        st.push(3);
+        st.push(4);
+         st.push(5);
+        st.pop();
+        st.display();
+    }
+}
