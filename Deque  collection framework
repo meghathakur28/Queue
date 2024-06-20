@@ -15,5 +15,11 @@ class HelloWorld {
        System.out.println(dq);
        System.out.println(dq.getLast());
        System.out.println(dq.getFirst());
+// there is some other operation 
+// remove() -> aumatically remove the 1st element
+// add()->aumatically add at the last
+// dq.removeAll(dq) -> remove all the deque which named dq
+// dq.removeFirstOccurence(1)-> remove the element 1 with the 1st occurence at the starting
+// dq.removeLastOccurence(1)-> remove the element 1 with the last occurence at the starting
     }
 }
