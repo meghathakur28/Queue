@@ -51,11 +51,24 @@ class HelloWorld {
         }
         public static void display()
         {
-            for(int i=0;i<n;i++)
+             if(f<=r)
+            {
+            for(int i=f;i<r;i++)
             {
                 System.out.print(arr[i]+" ");
             }
-            System.out.println("The rear: "+r );
+            }
+            else
+            {
+                for(int i=f;i<n;i++)
+                {
+                    System.out.print(arr[i]+" ");
+                }
+                for(int i=0;i<r;i++)
+                {
+                    System.out.print(arr[i]+" ");
+                }
+            }
         }
     }
     public static void main(String[] args) {
