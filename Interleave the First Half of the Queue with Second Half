@@ -1,0 +1,27 @@
+//You are given a queue Q of N integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.
+//N = 4
+//Q = {2,4,3,1}
+//Output:
+//{2,3,4,1}
+//Explanation:
+//After the mentioned rearrangement of the first half and second half, our final queue will be {2,3,4,1}.
+class Solution {
+    public static ArrayList<Integer> rearrangeQueue(int N, Queue<Integer> q) {
+       ArrayList<Integer> arr =new ArrayList<>();
+       Queue<Integer> q1=new LinkedList<>();
+       int n=N/2;
+       for(int i=0;i<n;i++)
+       {
+           q1.add(q.poll());
+       }
+        while(!q1.isEmpty()||!q.isEmpty())
+        {
+            if(!q1.isEmpty()){
+            arr.add(q1.poll());}
+            if(!q.isEmpty()){
+            arr.add(q.poll());}
+        }
+       
+       return arr;
+    }
+}
